@@ -1,0 +1,120 @@
+USE [HospitalDB]
+GO
+
+/****** Object:  Table [dbo].[Messages]    Script Date: 4/7/2022 9:55:08 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Messages](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Recieve] [nchar](30) NULL,
+	[Sender] [nchar](30) NULL,
+	[Message] [nchar](200) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/////////////////////
+
+USE [HospitalDB]
+GO
+
+/****** Object:  Table [dbo].[Patients]    Script Date: 4/7/2022 9:55:34 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Patients](
+	[PatientID] [int] IDENTITY(1,1) NOT NULL,
+	[Pname] [nchar](20) NULL,
+	[Age] [int] NULL,
+	[Gender] [nchar](10) NULL,
+	[BG] [nchar](10) NULL,
+	[problem] [varchar](max) NULL,
+	[Name] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[PatientID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+/////////////////
+
+USE [HospitalDB]
+GO
+
+/****** Object:  Table [dbo].[Reports]    Script Date: 4/7/2022 9:55:58 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Reports](
+	[Id] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+/////////////////
+
+USE [HospitalDB]
+GO
+
+/****** Object:  Table [dbo].[staffDetails]    Script Date: 4/7/2022 9:56:22 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[staffDetails](
+	[ID] [nchar](10) NOT NULL,
+	[Username] [nchar](20) NULL,
+	[password] [nchar](20) NULL,
+	[Email] [nchar](50) NULL,
+	[job] [nchar](20) NULL,
+	[FirstName] [nvarchar](max) NULL,
+	[LastName] [nvarchar](max) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+///////////////////////
+
+USE [HospitalDB]
+GO
+
+/****** Object:  Table [dbo].[UserData]    Script Date: 4/7/2022 9:56:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[UserData](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Username] [nchar](20) NULL,
+	[password] [nchar](20) NULL,
+	[Email] [nchar](30) NULL,
+	[job] [nchar](20) NULL
+) ON [PRIMARY]
+GO
